@@ -15,6 +15,7 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { removeUser } from "../../Slices/UserSlice";
+import { toggleTheme } from "../../Slices/ThemeSlice";
 
 const ProfileMenu = () => {
   const dispatch = useDispatch();
@@ -22,6 +23,7 @@ const ProfileMenu = () => {
   const user = useSelector((state:any)=>state.user);
   const [checked, setChecked] = useState(false);
   const [opened, setOpened] = useState(false);
+  const mode = useSelector((state: any) => state.theme.mode);
   const handleLogout = () => {
     localStorage.removeItem("token");
     localStorage.removeItem("user");
@@ -60,8 +62,8 @@ const ProfileMenu = () => {
           leftSection={<IconMoon size={14} />}
           rightSection={
             <Switch
-              checked={checked}
-              onChange={(event) => setChecked(event.currentTarget.checked)}
+              checked={mode === "dark"}
+              onChange={() => dispatch(toggleTheme())}
               size="md"
               color="dark.4"
               onLabel={<IconSun size={16} stroke={2.5} color="yellow" />}

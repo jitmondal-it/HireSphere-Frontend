@@ -55,7 +55,7 @@ const SearchBar = () => {
   [&_[data-mantine-slider-label]]:!bottom-[-28px]"
       >
         <div className="flex justify-between">
-          <div>Experiencey (year)</div>
+          <div>Experience (year)</div>
           <div>
             {value[0]}  - {value[1]}
           </div>

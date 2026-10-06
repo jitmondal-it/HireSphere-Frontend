@@ -9,6 +9,7 @@ import { Notifications } from "@mantine/notifications";
 import { Provider } from "react-redux";
 import Store from "./Store";
 import AppRoutes from "./Pages/AppRoutes";
+import ThemeProviderWrapper from "./ThemeProviderWrapper";
 
 function App() {
   const theme = createTheme({
@@ -49,10 +50,10 @@ function App() {
 
   return (
     <Provider store={Store}>
-    <MantineProvider defaultColorScheme="dark" theme={theme}>
+    <ThemeProviderWrapper theme={theme}>
        <Notifications position="top-center" zIndex={1000} />
          <AppRoutes/>
-    </MantineProvider>
+    </ThemeProviderWrapper>
     </Provider>
   );
 }

@@ -30,10 +30,11 @@ const JobDesc = (props:any) => {
           dispatch(changeProfile(updateProfile))
       }
       useEffect(()=>{
-        if(props.applicants?.filter((applicant:any)=>applicant.applicantId=user.id).length>0){
+        if(props.applicants?.some((applicant:any)=>String(applicant.applicantId) === String(user.id))){
           setApplied(true)
         }else setApplied(false)
-      },[props])
+      },[props.applicants, user.id])
+
       const handleClose=()=>{
         postJob({...props,jobStatus:"CLOSED"}).then((res)=>{
           successNotification("Success","Job Closed Successfully")

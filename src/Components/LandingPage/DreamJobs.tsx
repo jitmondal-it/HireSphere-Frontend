@@ -1,6 +1,5 @@
 import { Avatar, Divider, TextInput } from "@mantine/core";
 import {IconClockHour9, IconSearch, IconUsersPlus } from "@tabler/icons-react";
-
 const DreamJobs = () =>{
     return(
         <div className="flex items-center px-20 bs-mx:px-10 md-mx:px-5 md-mx:flex-col

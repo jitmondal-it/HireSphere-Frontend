@@ -32,13 +32,10 @@ const ResetPassword = (props: any) => {
     },1000) ;
 
 
-
-
   const handleSendOtp = () => {
     setOtpSending(true);
     sendOtp(email)
       .then((res) => {
-        console.log(res);
         successNotification("OTP sent Successfully","Enter OTP to reset password.")
         setOtpSent(true);
         setOtpSending(false);
