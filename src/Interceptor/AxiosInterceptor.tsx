@@ -2,7 +2,9 @@ import axios, { InternalAxiosRequestConfig } from "axios";
 import { navigateToLogin } from "../Services/AuthService";
 
 const axiosInstance = axios.create({
-  baseURL: "http://localhost:8081",
+  //baseURL: "http://localhost:8081",
+  baseURL: "https://hiresphere-backend-a85a.onrender.com"
+
 });
 
 axiosInstance.interceptors.request.use(
