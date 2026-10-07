@@ -1,46 +1,105 @@
-# HireSphere Frontend
+# HireSphere — Job Portal Frontend
 
-Frontend of HireSphere, a modern job portal application built with React, Vite, Tailwind CSS, and Mantine UI.
+HireSphere is a modern job portal designed to connect **job seekers and recruiters** through a simple and user-friendly platform.
 
-## Features
+This repository contains the **frontend of HireSphere**, built with **React, Vite, TypeScript, Tailwind CSS, and Mantine UI**. The frontend communicates with the HireSphere Spring Boot backend through REST APIs and provides separate experiences for job seekers and recruiters.
 
-- User Authentication (Job Seeker & Employer Login)
-- Job Search and Filtering
-- Company Profiles
-- Job Details Page
-- Apply for Jobs
-- Employer Dashboard (Post, Edit, and Manage Jobs)
-- Responsive Design
-- Modern UI with Mantine
+The goal of HireSphere is to simplify the complete recruitment process — from discovering jobs and applying for them to posting jobs and managing applicants.
 
-## Tech Stack
+---
 
-- React
-- Vite
-- Tailwind CSS
-- Mantine UI
-- React Router DOM
-- Redux Toolkit
-- Axios
+## ✨ Features
 
-## Installation
+### 👨‍💻 For Job Seekers
 
-```bash
-git clone <repository-url>
-cd HireSphere-Frontend
-npm install
-npm start
-```
+-  Browse and search available jobs
+-  View detailed job descriptions
+-  Apply for jobs
+-  See whether you have already applied
+-  Save/bookmark jobs
+-  View saved jobs
+-  Track application history
+-  Manage personal profile
+-  Upload and manage resume
 
-## Run Locally
+### 🏢 For Recruiters
 
-The application runs at:
+-  Post new job openings
+-  Edit existing job postings
+-  View jobs posted by the recruiter
+-  View applicants
+-  Explore candidate information
+-  Manage application status
+-  Schedule interviews
 
-```
-http://localhost:5173
-```
+### 🔐 Authentication
 
+- JWT-based authentication
+- Protected routes
+- Role-based UI
+- Token-based API authorization
+- Secure communication with the backend
 
-## Author
+---
 
-Jit Mondal
+## 🛠️ Tech Stack
+
+### Frontend
+
+| Technology | Purpose |
+|------------|---------|
+| React | Building the user interface |
+| TypeScript | Type-safe development |
+| Vite | Development server and build tool |
+| Tailwind CSS | Styling and responsive layouts |
+| Mantine UI | UI components |
+| React Router DOM | Client-side routing |
+| Redux Toolkit | Global state management |
+| Axios | REST API communication |
+| React Icons | Icons and visual elements |
+
+### Backend
+
+The frontend communicates with a separate Spring Boot backend.
+
+- Java
+- Spring Boot
+- Spring Data MongoDB
+- REST APIs
+- JWT Authentication
+- MongoDB
+
+👉 *Backend Repository:* [HireSphere Backend](https://github.com/jitmondal-it/HireSphere-Backend)
+---
+
+## 🏗️ Application Architecture
+
+```text
+                         ┌──────────────────────┐
+                         │        User          │
+                         │ Job Seeker / Recruiter
+                         └──────────┬───────────┘
+                                    │
+                                    ▼
+                         ┌──────────────────────┐
+                         │   React Frontend     │
+                         │       + Vite         │
+                         └──────────┬───────────┘
+                                    │
+                    ┌───────────────┼───────────────┐
+                    │               │               │
+                    ▼               ▼               ▼
+              React Router      Redux Store       Axios
+                    │               │               │
+                    └───────────────┼───────────────┘
+                                    │
+                                    ▼
+                         ┌──────────────────────┐
+                         │   Spring Boot API    │
+                         │      REST API        │
+                         └──────────┬───────────┘
+                                    │
+                                    ▼
+                         ┌──────────────────────┐
+                         │       MongoDB        │
+                         └──────────────────────┘
