@@ -9,7 +9,7 @@
     "@mantine/dates": "^8.3.18",
     "@mantine/form": "^9.1.1",
     "@mantine/hooks": "^8.3.16",
-    "@mantine/notifications": "^9.1.0",
+    "@mantine/notifications": "^8.3.18",
     "@mantine/tiptap": "^8.3.18",
     "@reduxjs/toolkit": "^2.11.2",
     "@tabler/icons": "^3.37.1",
