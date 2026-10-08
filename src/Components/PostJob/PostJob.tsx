@@ -87,18 +87,18 @@ const PostJob = () => {
       });
   };
   return (
-    <div className="w-4/5 mx-auto px-2 sm-mx:w-full sm-mx:px-5 md-mx:px-8">
+    <div className="w-4/5 mx-auto px-2 bs-mx:px-10 sm-mx:w-full sm-mx:px-5 md-mx:px-8">
       <div className="text-2xl font-semibold mb-5">Post a Job</div>
       <div className="flex flex-col gap-5">
-        <div className="flex gap-10 md-mx:gap-5 sm-mx:flex-col sm-mx:gap-4">
+        <div className="flex gap-10 md-mx:gap-5 [&>*]:w-1/2 sm-mx:[&>*]:!w-full sm-mx:flex-wrap">
           <SelectInput form={form} name="jobTitle" {...select[0]} />
           <SelectInput form={form} name="company" {...select[1]} />
         </div>
-        <div className="flex gap-10 md-mx:gap-5 sm-mx:flex-col sm-mx:gap-4">
+        <div className="flex gap-10 md-mx:gap-5 [&>*]:w-1/2 sm-mx:[&>*]:!w-full sm-mx:flex-wrap">
           <SelectInput form={form} name="experience" {...select[2]} />
           <SelectInput form={form} name="jobType" {...select[3]} />
         </div>
-        <div className="flex gap-10 md-mx:gap-5 sm-mx:flex-col sm-mx:gap-4">
+        <div className="flex gap-10 md-mx:gap-5 [&>*]:w-1/2 sm-mx:[&>*]:!w-full sm-mx:flex-wrap">
           <SelectInput form={form} name="location" {...select[4]} />
           <NumberInput
             {...form.getInputProps('packageOffered')}
@@ -134,11 +134,11 @@ const PostJob = () => {
           </div>
           <TextEditor form={form} data= {editorData} />
         </div>
-        <div className="flex gap-4">
-          <Button onClick={handlePost} color="brightSun.4" variant="light">
+        <div className="flex gap-4 sm-mx:flex-col">
+          <Button onClick={handlePost} color="brightSun.4" variant="light"  className="sm-mx:w-full">
             Publish Job
           </Button>
-          <Button color="brightSun.4" onClick={handleDraft} variant="outline">
+          <Button color="brightSun.4" onClick={handleDraft} variant="outline"  className="sm-mx:w-full">
             Save As Draft
           </Button>
         </div>
